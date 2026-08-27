@@ -1,5 +1,6 @@
 import json
 import sys
+import os
 from pathlib import Path
 import torch
 import torch.nn as nn
@@ -7,6 +8,7 @@ import yaml
 from dataset import get_dataloaders
 from model import get_model
 
+torch.manual_seed(777)
 
 def load_config(config_path: str) -> dict:
     with open(config_path) as f:
@@ -69,9 +71,14 @@ def evaluate(
 
 
 def main():
-    config_path = Path("/app/configs/training_config.yaml")
-    if not config_path.exists():
-        config_path = Path("configs/training_config.yaml")
+    # config_path = Path("/app/configs/training_config.yaml")
+    # if not config_path.exists():
+    #     config_path = Path("configs/training_config.yaml")
+    
+    config_path = os.environ.get('TRAINING_CONFIG')
+    if not config_path:
+        raise Exception("Config path not found")
+    
     config = load_config(str(config_path))
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -83,6 +90,7 @@ def main():
     train_loader, val_loader = get_dataloaders(
         data_dir=config["data"]["data_dir"],
         batch_size=config["training"]["batch_size"],
+        num_workers=config['training']['num_workers']
     )
     optimizer = torch.optim.Adam(
         model.parameters(),

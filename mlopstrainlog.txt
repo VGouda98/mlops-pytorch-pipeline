@@ -1,0 +1,20 @@
+/usr/local/lib/python3.12/site-packages/torch/utils/data/dataloader.py:666: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+{"epoch": 1, "train_loss": 1.3756, "train_accuracy": 0.4989, "val_loss": 1.1227, "val_accuracy": 0.6008}
+{"event": "checkpoint_saved", "path": "/app/checkpoints/classifier_v1.pt"}
+{"epoch": 2, "train_loss": 0.9072, "train_accuracy": 0.6767, "val_loss": 0.9842, "val_accuracy": 0.6735}
+{"event": "checkpoint_saved", "path": "/app/checkpoints/classifier_v1.pt"}
+{"epoch": 3, "train_loss": 0.7006, "train_accuracy": 0.7531, "val_loss": 1.0151, "val_accuracy": 0.6791}
+{"epoch": 4, "train_loss": 0.5852, "train_accuracy": 0.7949, "val_loss": 0.6961, "val_accuracy": 0.7729}
+{"event": "checkpoint_saved", "path": "/app/checkpoints/classifier_v1.pt"}
+{"epoch": 5, "train_loss": 0.5092, "train_accuracy": 0.8216, "val_loss": 0.6132, "val_accuracy": 0.7901}
+{"event": "checkpoint_saved", "path": "/app/checkpoints/classifier_v1.pt"}
+{"epoch": 6, "train_loss": 0.4592, "train_accuracy": 0.8402, "val_loss": 0.5353, "val_accuracy": 0.8239}
+{"event": "checkpoint_saved", "path": "/app/checkpoints/classifier_v1.pt"}
+{"epoch": 7, "train_loss": 0.4121, "train_accuracy": 0.8573, "val_loss": 0.6005, "val_accuracy": 0.809}
+{"epoch": 8, "train_loss": 0.3729, "train_accuracy": 0.8705, "val_loss": 0.4954, "val_accuracy": 0.8362}
+{"event": "checkpoint_saved", "path": "/app/checkpoints/classifier_v1.pt"}
+{"epoch": 9, "train_loss": 0.3447, "train_accuracy": 0.8806, "val_loss": 0.4532, "val_accuracy": 0.8562}
+{"event": "checkpoint_saved", "path": "/app/checkpoints/classifier_v1.pt"}
+{"epoch": 10, "train_loss": 0.3157, "train_accuracy": 0.8904, "val_loss": 0.5227, "val_accuracy": 0.8375}
+{"event": "training_complete", "best_val_loss": 0.4532}
