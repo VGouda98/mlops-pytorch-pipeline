@@ -39,6 +39,9 @@ spec:
           env:
             - name: PYTHONUNBUFFERED
               value: "1"
+            
+            - name: TRAINING_CONFIG
+              value: /app/configs/training_config.yaml
 
           volumeMounts:
             - name: training-config
@@ -47,17 +50,19 @@ spec:
 
             - name: training-storage
               mountPath: /app/data
+              subPath: data
 
             - name: training-storage
               mountPath: /app/checkpoints
+              subPath: checkpoints
 
           resources:
             requests:
-              cpu: "1"
-              memory: "1Gi"
+              cpu: "2"
+              memory: "4Gi"
             limits:
               cpu: "2"
-              memory: "2Gi"
+              memory: "4Gi"
 
       volumes:
         - name: training-config

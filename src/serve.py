@@ -84,7 +84,7 @@ def health():
 
 # asychronous file operation handling by FastAPI
 @app.post("/predict")
-async def predict(file):
+async def predict(file: UploadFile = File(...)):
     # check for model loaded
     if not is_model_loaded:
         raise Exception("Model is not loaded for prediction")
@@ -117,3 +117,7 @@ async def predict(file):
                 round(float(probabilities[i].item()), 6) for i in range(len(CLASS_NAMES))
         }
     }
+
+if __name__ == '__main__':
+    import uvicorn
+    uvicorn.run(app, host='0.0.0.0', port=8080)
