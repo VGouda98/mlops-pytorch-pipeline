@@ -31,6 +31,14 @@ spec:
     spec:
       restartPolicy: Never
 
+      nodeSelector:
+        accelerator: nvidia-gpu
+
+      tolerations:
+        - key: "nvidia.com/gpu"
+          operator: "Exists"
+          effect: "NoSchedule"
+
       containers:
         - name: trainer
           image: mlops-pytorch-train:latest
@@ -60,9 +68,11 @@ spec:
             requests:
               cpu: "2"
               memory: "4Gi"
+              nvidia.com/gpu: "1"
             limits:
               cpu: "2"
               memory: "4Gi"
+              nvidia.com/gpu: "1"
 
       volumes:
         - name: training-config
