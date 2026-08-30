@@ -1,3 +1,13 @@
+LINKS
+
+Repository link
+https://github.com/VGouda98/mlops-pytorch-pipeline
+
+PR with screenshots
+https://github.com/VGouda98/mlops-pytorch-pipeline/pull/2
+
+---
+
 CHALLENGING PART
 
 The following were the most challenging parts for me:
@@ -17,6 +27,5 @@ The training time for 10 epochs is roughly 7 hrs on the CPU. The training was te
 The setting asked for in Part E was not ideal for my laptop, it keeps getting slower and when i try to deploy and the node is shown to be crashed a few second ago everytime when check the logs. The checkpoints were somehow getting corrupted in the process and i had to start all over again. For a good amount of time, i was not able to see any ports getting up, it showed failed, and later it fails intermittently while running the service. This resulted in server could not be reached some time during testing the model with the test image.
 
 ---
-
 
 
